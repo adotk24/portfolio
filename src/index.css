@@ -102,7 +102,7 @@ a {
 
 .Five {
 
-  background-image: linear-gradient(to left bottom, #e0479e, #d160ba, #be75cf, #aa87dd, #9797e5, #858ed1, #7685bd, #6a7ba8, #535b7c, #3b3e52, #23232c, #050505);
+  background-image: linear-gradient(to right top,rgba(0,0,0,1) 11%, rgba(4,3,61,1) 25%, rgba(48,5,85,1) 39%, rgba(82,23,120,1) 51%, rgba(98,9,121,1) 64%, rgba(151,7,134,1) 75%, rgba(191,4,100,1) 87%, rgba(255,0,0,1) 100%);
 }
 
 .left {
