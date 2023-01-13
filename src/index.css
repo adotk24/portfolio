@@ -97,12 +97,13 @@ a {
   flex-direction: row;
   align-items: center;
   background-color:rgb(37, 42, 42);
+  position: relative;
 
 }
 
 .Five {
-
-  background-image: linear-gradient(to right top,rgba(0,0,0,1) 11%, rgba(4,3,61,1) 25%, rgba(48,5,85,1) 39%, rgba(82,23,120,1) 51%, rgba(98,9,121,1) 64%, rgba(151,7,134,1) 75%, rgba(191,4,100,1) 87%, rgba(255,0,0,1) 100%);
+  background-color: black;
+  /* background-image: linear-gradient(to right top,rgba(0,0,0,1) 11%, rgba(4,3,61,1) 25%, rgba(48,5,85,1) 39%, rgba(82,23,120,1) 51%, rgba(98,9,121,1) 64%, rgba(151,7,134,1) 75%, rgba(191,4,100,1) 87%, rgba(255,0,0,1) 100%); */
 }
 
 .left {
@@ -114,9 +115,11 @@ a {
   align-items: flex-end;
   justify-content: flex-end;
   padding-right: 2vw;
+  z-index: 1;
 }
 
 .right {
+
   height: 100%;
   width: 50%;
   display: flex;
@@ -124,6 +127,7 @@ a {
   align-items: flex-start;
   justify-content: flex-start;
   padding-left: 2vw;
+  z-index: 88;
 }
 
 .left-stuff {
@@ -134,6 +138,7 @@ a {
 }
 
 .right-stuff {
+
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -214,6 +219,7 @@ a {
   margin-right: 2vw;
   background-color: rgba(255, 255, 255, 0.049);
   border-radius: 45px;
+  z-index: 99;
   transition-duration: 0.35s;
   -webkit-transition-duration: 0.35s;
 }
@@ -293,4 +299,75 @@ a {
 .linked-in:hover {
   filter: invert(80%) sepia(0%) saturate(2%) hue-rotate(238deg) brightness(100%) contrast(100%);
   transition: all 1.5s ease;
+}
+
+
+
+.thermos {
+  filter: invert(80%) sepia(0%) saturate(2%) hue-rotate(238deg) brightness(100%) contrast(100%);
+  width: 5vw;
+  height: 5vw;
+  position: absolute;
+  left: 100px;
+  rotate: 45deg;
+
+}
+
+
+.cocktail {
+  width: 5vw;
+  height: 5vw;
+  color: gray;
+}
+
+.cocktail:hover {
+  animation: makeItfadeIn 3s 1s forwards;
+}
+
+@keyframes makeItfadeIn {
+
+  0% {
+    background-color: bottom;
+  }
+  100% {
+    background-position: top;
+  }
+}
+
+
+
+
+
+iframe {
+  position: absolute;
+  height: 100vh;
+  width: 50vw;
+  background-color: white;
+  border: none;
+}
+
+.preview-container {
+  z-index: 50;
+  position: absolute;
+  /* right: 0; */
+  height: 100%;
+  width: 0;
+  left: -100%;
+  top: 0;
+  visibility: hidden;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -o-transition: 1s ease;
+  transition: 1s ease;
+}
+
+
+.show {
+  width: 50vw;
+  visibility: visible;
+  -webkit-transform: translate(200%, 0);
+  -moz-transform: translate(200%, 0);
+  -o-transform: translate(200%, 0);
+  -ms-transform: translate(200%, 0);
+  transform: translate(200%, 0)
 }

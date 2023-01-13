@@ -1,3 +1,4 @@
+import cocktail from './cocktail.png'
 
 
 
@@ -5,7 +6,10 @@ export const PageFive = () => {
 
     return (
         <div className="Page Five">
-            <div></div>
+            <img className="thermos" />
+            <img className="cocktail" src={cocktail} />
+
+
         </div>
 
     )
