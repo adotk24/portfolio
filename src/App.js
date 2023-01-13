@@ -11,10 +11,9 @@ function App() {
 	return (
 		<div className="app">
 			<PageOne />
-			<PageTwo />
 			<PageThree />
 			<PageFour />
-			<PageFive />
+			<PageTwo />
 			<Navigation />
 		</div>
 	);
