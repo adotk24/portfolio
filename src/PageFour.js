@@ -9,6 +9,10 @@ import hardSplash from './Images/hard/hardsplash.gif'
 import hardStory from './Images/hard/hardstory.png'
 import hardReview from './Images/hard/hardreview.gif'
 import tvLogo from './Images/teamviewer/tv.ico'
+import tvAddGame from './Images/teamviewer/tv-addgame.gif'
+import tvBoxScore from './Images/teamviewer/tv-boxscore.png'
+import tvRoster from './Images/teamviewer/tv-rosterpic.png'
+
 
 export const PageFour = () => {
 
@@ -55,7 +59,7 @@ export const PageFour = () => {
                                 goals={['Increase the speed in which the site queries and renders data', 'Clean up and make my database more efficient', 'Create notification system where teams can challenge others!']}
                                 githubURL='https://github.com/adotk24/team-viewer'
                                 liveLink='https://team-viewer.onrender.com/'
-                                images={[hardSplash, hardStory, hardReview]}
+                                images={[tvBoxScore, tvAddGame, tvRoster]}
                             />
                         </div>
                     </div>
