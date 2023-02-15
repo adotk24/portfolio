@@ -10,7 +10,7 @@ export const Navigation = () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
-          });
+        });
     }
 
     const handleUpClick = (e) => {
@@ -18,30 +18,30 @@ export const Navigation = () => {
             top: -document.body.scrollHeight / 5,
             left: 0,
             behavior: 'smooth'
-          });
+        });
     }
 
-    const handleDownClick = (e) =>{
+    const handleDownClick = (e) => {
         window.scrollBy({
             top: document.body.scrollHeight / 5,
             left: 0,
             behavior: 'smooth'
-          });
+        });
     }
 
     const handleBottomClick = (e) => {
         window.scrollTo({
             top: document.body.scrollHeight,
             behavior: 'smooth'
-          });
+        });
     }
 
     return (
         <div className="Navigation">
-            <img id="nav-icons" onClick={handleTopClick} src={doubleUp} alt=""/>
-            <img id="nav-icons" onClick={handleUpClick} src={up} alt=""/>
-            <img id="nav-icons" onClick={handleDownClick} src={down} alt=""/>
-            <img id="nav-icons" onClick={handleBottomClick} src={doubleDown} alt=""/>
+            <img id="nav-icons" onClick={handleTopClick} src={doubleUp} alt="" />
+            <img id="nav-icons" onClick={handleUpClick} src={up} alt="" />
+            <img id="nav-icons" onClick={handleDownClick} src={down} alt="" />
+            <img id="nav-icons" onClick={handleBottomClick} src={doubleDown} alt="" />
         </div>
     )
 }

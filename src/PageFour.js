@@ -42,28 +42,6 @@ export const PageFour = () => {
             <div className="right">
                 <div className="right-stuff">
                     <div className="right-stuff-items">
-                        <span id="title">Team Viewer</span>
-                        {/* <div><a href="https://team-viewer.onrender.com/" target="_blank" rel="noopener noreferrer">Project link</a>&nbsp;&nbsp;<a href="https://www.maxpreps.com/" target="_blank" rel="noopener noreferrer">Original Site</a></div> */}
-                        <div className='view-modal'>
-                            <ProjectModal
-                                icon={tvLogo}
-                                altText='Team Viewer Logo'
-                                title='Team Viewer'
-                                snippet='MaxPreps clone where users can create and manage their sports team! Equipped with the ability to manage teams, players, games, and scores!'
-                                tech={['Python', 'JavaScript', 'React', 'Redux', 'Flask', 'HTML', 'CSS', 'PostgreSQL', 'SQLAlchemy', 'Render']}
-                                description="As a sports nut myself, I was excited to create something that could be used positively for my fellow athletes. This site was created
-                                with the goal of showcasing the talent of athletes so they can have an opportunity to play at the next level."
-                                // challenges="One of the challenges I faced during this project was creating a journal entry when the user completed a routine.
-                                // With two routines available to complete, an AM and/or PM routine, the entry should either be created or updated depending on whether the
-                                // user submitted a routine for that day."
-                                goals={['Increase the speed in which the site queries and renders data', 'Clean up and make my database more efficient', 'Create notification system where teams can challenge others!']}
-                                githubURL='https://github.com/adotk24/team-viewer'
-                                liveLink='https://team-viewer.onrender.com/'
-                                images={[tvSplash, tvBoxScore, tvAddGame, tvRoster]}
-                            />
-                        </div>
-                    </div>
-                    <div className="right-stuff-items">
                         <span id="title">Hard</span>
                         <div className='view-modal'>
                             <ProjectModal
@@ -104,6 +82,28 @@ export const PageFour = () => {
                                 githubURL='https://github.com/adotk24/shareBnb'
                                 liveLink='https://sharebnb-owhp.onrender.com/'
                                 images={[airbnbSplash, airbnbOneSpot, airbnbSearch]}
+                            />
+                        </div>
+                    </div>
+                    <div className="right-stuff-items">
+                        <span id="title">Team Viewer</span>
+                        {/* <div><a href="https://team-viewer.onrender.com/" target="_blank" rel="noopener noreferrer">Project link</a>&nbsp;&nbsp;<a href="https://www.maxpreps.com/" target="_blank" rel="noopener noreferrer">Original Site</a></div> */}
+                        <div className='view-modal'>
+                            <ProjectModal
+                                icon={tvLogo}
+                                altText='Team Viewer Logo'
+                                title='Team Viewer'
+                                snippet='MaxPreps clone where users can create and manage their sports team! Equipped with the ability to manage teams, players, games, and scores!'
+                                tech={['Python', 'JavaScript', 'React', 'Redux', 'Flask', 'HTML', 'CSS', 'PostgreSQL', 'SQLAlchemy', 'Render']}
+                                description="As a sports nut myself, I was excited to create something that could be used positively for my fellow athletes. This site was created
+                                with the goal of showcasing the talent of athletes so they can have an opportunity to play at the next level."
+                                // challenges="One of the challenges I faced during this project was creating a journal entry when the user completed a routine.
+                                // With two routines available to complete, an AM and/or PM routine, the entry should either be created or updated depending on whether the
+                                // user submitted a routine for that day."
+                                goals={['Increase the speed in which the site queries and renders data', 'Clean up and make my database more efficient', 'Create notification system where teams can challenge others!']}
+                                githubURL='https://github.com/adotk24/team-viewer'
+                                liveLink='https://team-viewer.onrender.com/'
+                                images={[tvSplash, tvBoxScore, tvAddGame, tvRoster]}
                             />
                         </div>
                     </div>
