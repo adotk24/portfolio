@@ -85,7 +85,7 @@ export const PageFour = () => {
                         </div>
                     </div>
                     <div className="right-stuff-items">
-                        <span id="title">BnB</span>
+                        <span id="title">shareBnb</span>
                         <div className='view-modal'>
                             <ProjectModal
                                 icon={airbnbLogo}
