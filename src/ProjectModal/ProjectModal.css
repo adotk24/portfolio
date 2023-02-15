@@ -22,7 +22,7 @@
 .github a,
 .live-link a {
     text-decoration: none;
-    color: #adbac7;
+    color: black;
 }
 
 .tech-used h4,
@@ -132,6 +132,8 @@
     .live-link {
         font-size: 12px;
         padding: 4px 5px;
+        border: 1px solid red;
+        color: black
     }
 
     .overview-title-snippet h2 {
@@ -150,4 +152,16 @@
 
 .modaltext {
     color: white
+}
+
+.view-btn {
+    width: 50%;
+    height: 100%;
+    background-color: rgb(37, 42, 42);
+    color: white;
+    margin-top: 5px;
+    font-size: 80%;
+    border: none;
+    text-align: start;
+    cursor: pointer
 }

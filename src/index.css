@@ -291,6 +291,7 @@ a {
 .git-hub {
   transition-duration: 0.35s;
   -webkit-transition-duration: 0.35s;
+
 }
 
 .git-hub:hover {
@@ -387,17 +388,14 @@ hr {
 }
 
 button {
-  background-color: #3c4249;
-  border: 1px solid #444c56;
-  color: #adbac7;
-  font-weight: bold;
-  border-radius: 20px;
+  color: black;
+  background-color: white
 }
 
 button:hover {
-  transition-duration: 0.3s;
+  /* transition-duration: 0.3s;
   background-color: #545d68;
-  border: 1px solid rgba(180, 193, 206, 0.699);
+  border: 1px solid rgba(180, 193, 206, 0.699); */
 }
 
 h3 {
