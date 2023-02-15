@@ -61,7 +61,7 @@
     max-width: 100vw;
     position: relative;
     margin: auto;
-    overflow-x: scroll;
+    overflow-x: auto;
     width: 100%;
     animation-duration: 1s;
 }
