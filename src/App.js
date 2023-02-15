@@ -13,7 +13,7 @@ function App() {
 			<PageThree />
 			<PageFour />
 			<PageTwo />
-			<Navigation />
+			{/* <Navigation /> */}
 		</div>
 	);
 }
