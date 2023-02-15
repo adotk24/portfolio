@@ -29,10 +29,7 @@ export const PageTwo = () => {
                         <div>Philsophy-Honors/ Pre-Law</div>
                         <div>Student</div>
                     </div>
-                    <div className="right-stuff-items">
-                        <span id="title">Ichiban Restaurant</span> <span id="years">2018-2020</span>
-                        <div>Server</div>
-                    </div>
+
                 </div>
             </div>
         </div>
