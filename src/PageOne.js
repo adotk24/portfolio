@@ -15,6 +15,9 @@ export const PageOne = () => {
                     <div id="name">
                         Kim
                     </div>
+                    <div className='fsse'>
+                        Full-Stack Software Engineer
+                    </div>
                 </div>
             </div>
             <div className="right">
