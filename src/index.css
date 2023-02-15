@@ -110,7 +110,6 @@ a {
 }
 
 .left {
-  border-right: 1px solid gray;
   height: 100%;
   width: 50%;
   display: flex;
@@ -122,6 +121,7 @@ a {
 }
 
 .right {
+  border-left: 1px solid gray;
 
   height: 100%;
   width: 50%;
