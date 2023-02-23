@@ -9,6 +9,7 @@ Page 3
     a. Bigger text inside modal
     b. Better spacing inside modal
     c. Change button styling inside modal
+    d. Fix bug where x-scroll shows after closing modal
 
 Page 4
     a. OPTIONAL make color of text change to school color on interact
