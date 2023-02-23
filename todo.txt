@@ -1,0 +1,18 @@
+Page 1
+    a. Make all icons jiggle on hover
+    b. Make title turn white on hover
+
+Page 2
+    a. Some type of animation when hovering skills
+
+Page 3
+    a. Bigger text inside modal
+    b. Better spacing inside modal
+    c. Change button styling inside modal
+
+Page 4
+    a. OPTIONAL make color of text change to school color on interact
+
+SITE WIDE
+    a. Way too much space on the outsides
+    b. Add transitions between pages
