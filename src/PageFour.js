@@ -26,7 +26,7 @@ export const PageFour = () => {
 
     const sources = {
         "uTube": "https://team-viewer.onrender.com/",
-        "Hard": "https://hard.onrender.com/",
+        "Hard": "https://hard-bijp.onrender.com/",
         "BnB": "https://sharebnb-owhp.onrender.com/"
     }
 
@@ -52,12 +52,9 @@ export const PageFour = () => {
                                 tech={['Python', 'JavaScript', 'React', 'Redux', 'Flask', 'HTML', 'CSS', 'PostgreSQL', 'SQLAlchemy', 'Render']}
                                 description="As a frequent user of the popular blog site, Medium, I was excited to create a site where people around
                                 the world can show off their knowledge and creativity freely!"
-                                // challenges="One of the challenges I faced during this project was creating a journal entry when the user completed a routine.
-                                // With two routines available to complete, an AM and/or PM routine, the entry should either be created or updated depending on whether the
-                                // user submitted a routine for that day."
                                 goals={['Create notification and system to accept or decline follow requests', 'Give option to user to share blog posts privately or within a small group', 'Implement Google Maps API for optional location viewing']}
                                 githubURL='https://github.com/Ykk2/medium-clone'
-                                liveLink='https://hard.onrender.com/'
+                                liveLink='https://hard-bijp.onrender.com/'
                                 images={[hardSplash, hardStory, hardReview]}
                             />
                         </div>
@@ -75,9 +72,6 @@ export const PageFour = () => {
                                 the necessary skills to completely build it out. Using all the knowledge I learned over the last few months
                                 to finally build this project was a rewarding experiencing! My goals for this project was to create a clean and efficient
                                 user interface that leads to a good user experience!"
-                                // challenges="One of the challenges I faced during this project was creating a journal entry when the user completed a routine.
-                                // With two routines available to complete, an AM and/or PM routine, the entry should either be created or updated depending on whether the
-                                // user submitted a routine for that day."
                                 goals={['Implement Google Maps API for better location viewing', 'Improve the styling to be pixel-perfect to airbnb', 'Notifications for both a booker and bookee when bookings details change']}
                                 githubURL='https://github.com/adotk24/shareBnb'
                                 liveLink='https://sharebnb-owhp.onrender.com/'
@@ -97,9 +91,6 @@ export const PageFour = () => {
                                 tech={['Python', 'JavaScript', 'React', 'Redux', 'Flask', 'HTML', 'CSS', 'PostgreSQL', 'SQLAlchemy', 'Render']}
                                 description="As a sports nut myself, I was excited to create something that could be used positively for my fellow athletes. This site was created
                                 with the goal of showcasing the talent of athletes so they can have an opportunity to play at the next level."
-                                // challenges="One of the challenges I faced during this project was creating a journal entry when the user completed a routine.
-                                // With two routines available to complete, an AM and/or PM routine, the entry should either be created or updated depending on whether the
-                                // user submitted a routine for that day."
                                 goals={['Increase the speed in which the site queries and renders data', 'Clean up and make my database more efficient', 'Create notification system where teams can challenge others!']}
                                 githubURL='https://github.com/adotk24/team-viewer'
                                 liveLink='https://team-viewer.onrender.com/'
