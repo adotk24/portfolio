@@ -43,17 +43,17 @@ function Projects() {
                 cName="reversed-proj"
               />
 
-              {/* <ProBox
+              <ProBox
                 title="gymate"
                 img={Gymate}
                 description="Comprehensive resource for fitness information, class schedules, membership options, and tools to help users achieve their fitness goals."
                 techno1="React"
                 techno2="CSS"
-                code=""
+                code="https://github.com/adotk24/Gymate"
                 demo="https://gymate-iota.vercel.app/"
                 scrollY="-89%"
                 icon="🏋️"
-              /> */}
+              />
 {/*
               <ProBox
                 title="Raouf Ecommerce"
