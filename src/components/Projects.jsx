@@ -88,7 +88,7 @@ function Projects() {
                 code="https://github.com/adotk24/shareBnb"
                 demo="https://sharebnb-owhp.onrender.com/"
                 scrollY="-22%"
-                icon="📖"
+                icon="🏠"
                 cName="reversed-proj"
               />
             </div>
