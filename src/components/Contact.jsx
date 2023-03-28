@@ -6,7 +6,7 @@ function Contact() {
             <div className="contact__content">
               <div className="contact__title">
                 <p>contact</p>
-                <h3>Don't be shy! Hit me up! 👇</h3>
+                <h3>Let's Connect! 👇</h3>
               </div>
               <div className="contact__icons">
                 <div className="contact__icon-box">

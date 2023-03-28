@@ -70,7 +70,7 @@ function Projects() {
                 <ProBox
                 title="Hard"
                 img={Hard}
-                description="Clone of Medium.com that allows any user to be there own favorite blogger. ***hosted on render which is sort of slow, please allow 30 seconds to load."
+                description="Clone of Medium that allows any user to be their own favorite blogger. *Hosted on render, please allow 30 seconds to load."
                 techno1="Python/Flask"
                 techno2="React"
                 code="https://github.com/Ykk2/medium-clone"
@@ -82,7 +82,7 @@ function Projects() {
                <ProBox
                 title="shareBnb"
                 img={Share}
-                description="Clone of airBnb.com that shows off the easy transactions in dealing with the temporary housing industry. ***hosted on render which is sort of slow, please allow 30 seconds to load."
+                description="Clone of airBnb.com that shows off the easy transactions in dealing with the temporary housing industry. *Hosted on render, please allow 30 seconds to load."
                 techno1="Express.js"
                 techno2="React"
                 code="https://github.com/adotk24/shareBnb"
