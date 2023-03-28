@@ -21,7 +21,7 @@ function Projects() {
               <ProBox
                 title="Car Rental"
                 img={CarRental}
-                description="A car rental website is an online platform that allows users to rent cars for personal or business use. The website provides an interface for searching, comparing, and reserving cars."
+                description="A car rental site that provides an interface for searching, comparing, and reserving cars."
                 techno1="React"
                 techno2="CSS"
                 code="https://github.com/adotk24/car-rental"
@@ -33,32 +33,32 @@ function Projects() {
               <ProBox
                 title="coindom"
                 img={CoinDom}
-                description="Coindom is a crypto app that allows users to search for information about various cryptocurrencies in real-time."
+                description="Crypto app that allows users to search for information about various cryptocurrencies in real-time."
                 techno1="React"
                 techno2="CSS"
-                code=""
+                code="https://github.com/adotk24/Coindom"
                 demo="https://coindom-crypto-search.vercel.app/"
                 scrollY="-74%"
                 icon="💸"
                 cName="reversed-proj"
               />
 
-              <ProBox
+              {/* <ProBox
                 title="gymate"
                 img={Gymate}
-                description="A gym website is a comprehensive resource for fitness information, class schedules, membership options, and tools to help users achieve their fitness goals."
+                description="Comprehensive resource for fitness information, class schedules, membership options, and tools to help users achieve their fitness goals."
                 techno1="React"
                 techno2="CSS"
                 code=""
                 demo="https://gymate-iota.vercel.app/"
                 scrollY="-89%"
                 icon="🏋️"
-              />
-
+              /> */}
+{/*
               <ProBox
                 title="Raouf Ecommerce"
                 img={Raouf}
-                description="With a focus on simplicity and clean design, this store prioritize user experience, making it easy for customers to find and purchase the products they need."
+                description="With a focus on simplicity and clean design, this store prioritize user experience, making the shopping experience quick yet enjoyable."
                 techno1="React"
                 techno2="CSS"
                 code=""
@@ -66,11 +66,11 @@ function Projects() {
                 scrollY="-71%"
                 icon="🛒"
                 cName="reversed-proj"
-              />
+              /> */}
                 <ProBox
                 title="Hard"
                 img={Hard}
-                description="With a focus on simplicity and clean design, this store prioritize user experience, making it easy for customers to find and purchase the products they need."
+                description="Clone of Medium.com that allows any user to be there own favorite blogger. ***hosted on render which is sort of slow, please allow 30 seconds to load."
                 techno1="Python/Flask"
                 techno2="React"
                 code="https://github.com/Ykk2/medium-clone"
@@ -82,7 +82,7 @@ function Projects() {
                <ProBox
                 title="shareBnb"
                 img={Share}
-                description="With a focus on simplicity and clean design, this store prioritize user experience, making it easy for customers to find and purchase the products they need."
+                description="Clone of airBnb.com that shows off the easy transactions in dealing with the temporary housing industry. ***hosted on render which is sort of slow, please allow 30 seconds to load."
                 techno1="Express.js"
                 techno2="React"
                 code="https://github.com/adotk24/shareBnb"
