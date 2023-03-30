@@ -89,7 +89,7 @@ function Projects() {
                 demo="https://sharebnb-owhp.onrender.com/"
                 scrollY="-22%"
                 icon="🏠"
-                cName="reversed-proj"
+                // cName="reversed-proj"
               />
             </div>
           </div>
