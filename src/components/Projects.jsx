@@ -18,7 +18,7 @@ function Projects() {
             <p>portfolio</p>
             <h3>Each project is a unique piece of development 🧩</h3>
             <div className="projects-grid">
-              <ProBox
+              {/* <ProBox
                 title="Car Rental"
                 img={CarRental}
                 description="A car rental site that provides an interface for searching, comparing, and reserving cars."
@@ -53,7 +53,7 @@ function Projects() {
                 demo="https://gymate-iota.vercel.app/"
                 scrollY="-89%"
                 icon="🏋️"
-              />
+              /> */}
 {/*
               <ProBox
                 title="Raouf Ecommerce"
@@ -90,6 +90,18 @@ function Projects() {
                 scrollY="-22%"
                 icon="🏠"
                 // cName="reversed-proj"
+              />
+               <ProBox
+                title="TeamViewer"
+                img={TV}
+                description="Database for users to store stats on their favorite players every game! *Hosted on render, please allow 30 seconds to load."
+                techno1="Python/Flask"
+                techno2="React"
+                code="https://github.com/adotk24/team-viewer"
+                demo="https://team-viewer.onrender.com/"
+                // scrollY="-22%"
+                icon="🏀"
+                cName="reversed-proj"
               />
             </div>
           </div>
