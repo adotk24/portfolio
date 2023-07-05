@@ -20,9 +20,9 @@ function Hero() {
               <div className="hero-text">
                 <h1>Hi there, I'm Andrew</h1>
                 <img src={Waving} alt="waving_hand" />
+
                 <p>
-                  A passionate Full-Stack
-                  Engineer based in Texas. 📍
+                  Current Software Engineer @ Scale AI (contract) looking for a full time position!
                 </p>
                 <span>
                   <a
