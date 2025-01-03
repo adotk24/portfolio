@@ -10,6 +10,7 @@ import Flask from '../images/icons/flask.png'
 import Docker from '../images/icons/docker.png'
 import Resume from '../images/resume.svg'
 
+
 function Hero() {
   return (
     <>
