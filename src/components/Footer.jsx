@@ -24,6 +24,7 @@ function Footer() {
                 >
                   <i className="fa-brands fa-github"></i>
                 </a>
+                
               </div>
             </div>
           </div>

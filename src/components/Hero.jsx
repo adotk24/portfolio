@@ -18,11 +18,11 @@ function Hero() {
           <div className="content">
             <div className="hero-main">
               <div className="hero-text">
-                <h1>Hi there, I'm Andrew</h1>
+                <h1>Hey there, I'm Andrew</h1>
                 <img src={Waving} alt="waving_hand" />
 
                 <p>
-                  Current Software Engineer @ Scale AI (contract) looking for a full time position!
+                Full-stack Software Engineer currently based in Dallas, Texas, seeking a full-time position!
                 </p>
                 <span>
                   <a

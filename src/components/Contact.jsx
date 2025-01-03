@@ -1,3 +1,5 @@
+import Resume from '../images/resume.svg'
+
 function Contact() {
     return (
       <>
@@ -9,15 +11,7 @@ function Contact() {
                 <h3>Let's Connect! 👇</h3>
               </div>
               <div className="contact__icons">
-                <div className="contact__icon-box">
-                  <span>
-                    <i className="fa-solid fa-map-location-dot"></i>
-                  </span>
-                  <div className="contact__info">
-                    <h3>Location</h3>
-                    <p>Dallas, Texas</p>
-                  </div>
-                </div>
+              
 
                 <div className="contact__icon-box">
                   <span>
@@ -29,7 +23,35 @@ function Contact() {
                       andrewkim1998@gmail.com
                     </a>
                   </div>
+                  
                 </div>
+                <div
+  className="contact__icon-box"
+  onClick={() => window.open("https://www.linkedin.com/in/andrewkimcode/", "_blank")}
+  style={{ cursor: "pointer" }} // Optional: changes the cursor to a pointer when hovering
+>
+  <span>
+    <i className="fa-brands fa-linkedin"></i>
+  </span>
+  <div className="contact__info">
+    <h3>Linkedin</h3>
+  </div>
+</div>
+
+
+<div
+  className="contact__icon-box"
+  onClick={() => window.open("./MyResume.pdf", "_blank")}
+  style={{ cursor: "pointer" }} // Optional: changes the cursor to a pointer when hovering
+>
+  <span>
+    <i className="fa-solid fa-print"></i>
+  </span>
+  <div className="contact__info">
+    <h3>Resume</h3>
+  </div>
+</div>
+
               </div>
             </div>
           </div>

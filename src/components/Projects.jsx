@@ -79,7 +79,7 @@ function Projects() {
                 icon="📖"
                 cName="reversed-proj"
               />
-               <ProBox
+               {/* <ProBox
                 title="shareBnb"
                 img={Share}
                 description="Clone of airBnb.com that shows off the easy transactions in dealing with the temporary housing industry. *Hosted on render, please allow 30 seconds to load."
@@ -88,9 +88,9 @@ function Projects() {
                 code="https://github.com/adotk24/shareBnb"
                 demo="https://sharebnb-owhp.onrender.com/"
                 scrollY="-22%"
-                icon="🏠"
-                // cName="reversed-proj"
-              />
+                icon="🏠" */}
+                {/* // cName="reversed-proj" */}
+              {/* /> */}
                <ProBox
                 title="TeamViewer"
                 img={TV}
@@ -101,7 +101,6 @@ function Projects() {
                 demo="https://team-viewer.onrender.com/"
                 // scrollY="-22%"
                 icon="🏀"
-                cName="reversed-proj"
               />
             </div>
           </div>
