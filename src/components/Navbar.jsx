@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import "../dist/styles.css";
 
 function Navbar() {
@@ -8,9 +8,43 @@ function Navbar() {
     setHamburger(!hamburger);
   };
 
+  const closeMenu = () => {
+    setHamburger(false);
+  };
+
   const pageUp = () => {
     window.scrollTo({ top: (0, 0), behavior: "smooth" });
   };
+
+  // Close menu when clicking outside or on escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        setHamburger(false);
+      }
+    };
+
+    const handleClickOutside = (e) => {
+      if (hamburger && !e.target.closest('.mobile-nav') && !e.target.closest('.mobile-menu')) {
+        setHamburger(false);
+      }
+    };
+
+    if (hamburger) {
+      document.addEventListener('keydown', handleEscape);
+      document.addEventListener('click', handleClickOutside);
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.removeEventListener('click', handleClickOutside);
+      document.body.style.overflow = 'unset';
+    };
+  }, [hamburger]);
 
   return (
     <>
@@ -29,14 +63,14 @@ function Navbar() {
           </li>
 
           <li>
-            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
           </li>
 
           <li>
             <a href="#contact">Contact</a>
           </li>
 
-          <li onClick={() => hamburgerMenu()}>
+          <li onClick={hamburgerMenu}>
             <i className="fa-solid fa-bars-staggered mobile-menu"></i>
           </li>
         </ul>
@@ -44,24 +78,24 @@ function Navbar() {
 
       {/* mobile nav */}
       <div className={`mobile-nav ${hamburger ? "open-menu" : "closed-menu"}`}>
-        <span onClick={() => hamburgerMenu()}>
+        <span onClick={closeMenu}>
           <i className="fa-solid fa-xmark"></i>
         </span>
 
         <ul>
-          <li onClick={() => hamburgerMenu()}>
+          <li onClick={closeMenu}>
             <a href="#home">Home</a>
           </li>
 
-          <li onClick={() => hamburgerMenu()}>
+          <li onClick={closeMenu}>
             <a href="#about">About</a>
           </li>
 
-          <li onClick={() => hamburgerMenu()}>
-            <a href="#projects">Projects</a>
+          <li onClick={closeMenu}>
+            <a href="#experience">Experience</a>
           </li>
 
-          <li onClick={() => hamburgerMenu()}>
+          <li onClick={closeMenu}>
             <a href="#contact">Contact</a>
           </li>
         </ul>
