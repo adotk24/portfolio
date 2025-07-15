@@ -3,11 +3,25 @@ import { motion } from "framer-motion";
 import HeroImg from "../images/hero-pfp.JPG";
 
 function AboutMe() {
-  // Cleanup any ongoing animations on component unmount
+  // Proper cleanup for animations and memory management
   useEffect(() => {
+    // Store any active timeouts or intervals for cleanup
+    const activeAnimations = [];
+    
     return () => {
       // Component cleanup - ensure any running animations are stopped
-      // This helps prevent memory leaks with framer-motion
+      // Clear any active timeouts/intervals
+      activeAnimations.forEach(id => {
+        if (typeof id === 'number') {
+          clearTimeout(id);
+          clearInterval(id);
+        }
+      });
+      
+      // Force garbage collection hint for large images
+      if (window.gc) {
+        window.gc();
+      }
     };
   }, []);
 

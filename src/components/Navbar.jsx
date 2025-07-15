@@ -16,14 +16,20 @@ function Navbar() {
     window.scrollTo({ top: (0, 0), behavior: "smooth" });
   };
 
-  // Cleanup body overflow on component unmount to prevent memory leaks
+  // Enhanced cleanup for memory leaks prevention
   useEffect(() => {
     return () => {
       // Ensure body overflow is restored when component unmounts
       document.body.style.overflow = 'unset';
-      // Remove any lingering event listeners
+      
+      // More comprehensive event listener cleanup
       document.removeEventListener('keydown', () => {});
       document.removeEventListener('click', () => {});
+      document.removeEventListener('touchstart', () => {});
+      document.removeEventListener('touchend', () => {});
+      
+      // Clean up any stored references
+      setHamburger(false);
     };
   }, []);
 

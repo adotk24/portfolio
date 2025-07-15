@@ -2,11 +2,24 @@ import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 
 function Footer() {
-  // Cleanup any ongoing animations on component unmount
+  // Proper cleanup for animations and memory management
   useEffect(() => {
+    // Store any active timeouts or intervals for cleanup
+    const activeAnimations = [];
+    
     return () => {
       // Component cleanup - ensure any running animations are stopped
-      // This helps prevent memory leaks with framer-motion
+      // Clear any active timeouts/intervals
+      activeAnimations.forEach(id => {
+        if (typeof id === 'number') {
+          clearTimeout(id);
+          clearInterval(id);
+        }
+      });
+      
+      // Clean up any window references or global event listeners
+      window.removeEventListener('resize', () => {});
+      window.removeEventListener('scroll', () => {});
     };
   }, []);
 

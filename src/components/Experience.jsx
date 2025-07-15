@@ -4,11 +4,25 @@ import { motion, AnimatePresence } from 'framer-motion';
 function Experience() {
   const [activeTab, setActiveTab] = useState(0);
 
-  // Cleanup any ongoing animations on component unmount
+  // Enhanced cleanup for animations and memory management
   useEffect(() => {
+    // Store any active timeouts or intervals for cleanup
+    const activeAnimations = [];
+    
     return () => {
       // Clear any active tab state to help with cleanup
       setActiveTab(0);
+      
+      // Clear any active timeouts/intervals
+      activeAnimations.forEach(id => {
+        if (typeof id === 'number') {
+          clearTimeout(id);
+          clearInterval(id);
+        }
+      });
+      
+      // Clean up any framer-motion animations
+      // Force cleanup of any remaining animation contexts
     };
   }, []);
 

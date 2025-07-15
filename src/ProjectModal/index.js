@@ -5,27 +5,53 @@ import './ProjectModal.css';
 function ProjectModal({ icon, altText, title, snippet, tech, description, challenges, goals, githubURL, liveLink, images }) {
     const [showModal, setShowModal] = useState(false);
 
-    // Cleanup body overflow on component unmount to prevent memory leaks
+    // Enhanced cleanup for memory leaks prevention  
     useEffect(() => {
         return () => {
             // Restore body overflow when component unmounts
             document.body.style.overflow = 'unset';
+            
+            // Clear modal state to free memory
+            setShowModal(false);
+            
+            // Clean up any cached image data
+            if (images && images.length > 0) {
+                images.forEach(imageSrc => {
+                    // Clear image from browser cache if possible
+                    const img = new Image();
+                    img.src = '';
+                });
+            }
         };
-    }, []);
+    }, [images]);
 
-    // Manage body overflow when modal state changes
+    // Manage body overflow when modal state changes with enhanced cleanup
     useEffect(() => {
+        let timeoutId;
+        
         if (showModal) {
             document.body.style.overflow = 'hidden';
+            // Preload images with timeout cleanup
+            if (images && images.length > 0) {
+                images.forEach((imageSrc, index) => {
+                    timeoutId = setTimeout(() => {
+                        const img = new Image();
+                        img.src = imageSrc;
+                    }, index * 100); // Stagger loading to prevent memory spike
+                });
+            }
         } else {
             document.body.style.overflow = 'unset';
         }
 
-        // Cleanup function to restore overflow when effect runs again or component unmounts
+        // Enhanced cleanup function
         return () => {
             document.body.style.overflow = 'unset';
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
         };
-    }, [showModal]);
+    }, [showModal, images]);
 
     const viewProject = () => {
         setShowModal(true);

@@ -1,43 +1,48 @@
 // import "../dist/styles.css";
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
-import Waving from "../images/waving.png";
+import Waving from "../images/waving.webp";
 import Html from "../images/icons/html.svg";
 import Css from "../images/icons/css3.svg";
 import Js from "../images/icons/javascript.svg";
 import ReactIcon from "../images/icons/react.svg";
-import Python from '../images/icons/python.png'
+import Python from '../images/icons/python.webp'
 import Node from '../images/icons/node.svg'
-import Flask from '../images/icons/flask.png'
-import Docker from '../images/icons/docker.png'
+import Flask from '../images/icons/flask.webp'
+import Docker from '../images/icons/docker.webp'
 
 function Hero() {
   const wavingAnimationControls = useAnimation();
   const componentMounted = useRef(true);
 
   useEffect(() => {
-    // Start the waving animation
-    const startWavingAnimation = async () => {
-      while (componentMounted.current) {
-        try {
-          await wavingAnimationControls.start({
-            rotate: [0, 20, -10, 0],
-            transition: { duration: 2, ease: "easeInOut" }
-          });
-          // Add a small delay between animations to prevent excessive CPU usage
-          await new Promise(resolve => setTimeout(resolve, 1000));
-        } catch (error) {
-          // Animation was cancelled, which is normal when component unmounts
-          break;
+    let timeoutId;
+    
+    // More efficient animation using recursive setTimeout with proper cleanup
+    const startWavingAnimation = () => {
+      if (!componentMounted.current) return;
+      
+      wavingAnimationControls.start({
+        rotate: [0, 20, -10, 0],
+        transition: { duration: 2, ease: "easeInOut" }
+      }).then(() => {
+        if (componentMounted.current) {
+          // Use setTimeout for delay with proper cleanup
+          timeoutId = setTimeout(startWavingAnimation, 1000);
         }
-      }
+      }).catch(() => {
+        // Animation was cancelled, which is normal
+      });
     };
 
     startWavingAnimation();
 
-    // Cleanup function
+    // Enhanced cleanup function
     return () => {
       componentMounted.current = false;
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
       wavingAnimationControls.stop();
     };
   }, [wavingAnimationControls]);
