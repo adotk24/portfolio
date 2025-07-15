@@ -1,28 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 function Contact() {
-  // Proper cleanup for animations and memory management
-  useEffect(() => {
-    // Store any active timeouts or intervals for cleanup
-    const activeAnimations = [];
-    
-    return () => {
-      // Component cleanup - ensure any running animations are stopped
-      // Clear any active timeouts/intervals
-      activeAnimations.forEach(id => {
-        if (typeof id === 'number') {
-          clearTimeout(id);
-          clearInterval(id);
-        }
-      });
-      
-      // Remove any event listeners that might have been added
-      document.removeEventListener('click', () => {});
-      document.removeEventListener('keydown', () => {});
-    };
-  }, []);
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -46,7 +25,8 @@ function Contact() {
     }
   };
 
-  const contactItems = [
+  // Optimize contact items to prevent unnecessary re-renders
+  const contactItems = React.useMemo(() => [
     {
       icon: "fa-solid fa-envelope-open-text",
       title: "Mail",
@@ -65,7 +45,7 @@ function Contact() {
       link: "./MyResume.pdf",
       text: "Resume"
     }
-  ];
+  ], []);
 
   return (
     <>

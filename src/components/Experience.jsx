@@ -1,37 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function Experience() {
   const [activeTab, setActiveTab] = useState(0);
 
-  // Enhanced cleanup for animations and memory management
-  useEffect(() => {
-    // Store any active timeouts or intervals for cleanup
-    const activeAnimations = [];
-    
-    return () => {
-      // Clear any active tab state to help with cleanup
-      setActiveTab(0);
-      
-      // Clear any active timeouts/intervals
-      activeAnimations.forEach(id => {
-        if (typeof id === 'number') {
-          clearTimeout(id);
-          clearInterval(id);
-        }
-      });
-      
-      // Clean up any framer-motion animations
-      // Force cleanup of any remaining animation contexts
-    };
-  }, []);
-
-  const experiences = [
+  // Optimize experiences data to prevent unnecessary re-renders
+  const experiences = React.useMemo(() => [
     {
       title: "Software Engineer II",
       company: "Saleo",
       period: "Feb 2024 – Present",
-      // location: "Remote",
       achievements: [
         "Integrated AI-powered automation into internal tools using Python and JavaScript/TypeScript, enhancing engineering efficiency, streamlining workflows, and reducing manual workload by 250%.",
         "Automated API monitoring with Playwright (JavaScript/TypeScript), proactively identifying issues, reducing customer disruptions by 75%, and minimizing required changes.",
@@ -40,28 +18,17 @@ function Experience() {
       ]
     },
     {
-      title: "Software Engineer I",
-      company: "Saleo",
-      period: "Jan 2023 – Feb 2024",
-      // location: "Remote",
-      achievements: [
-        "Developed Python backend scripts to streamline data flow, improving integration scalability by 30%.",
-        "Designed TypeScript interfaces to securely connect client backends with our platform.",
-        "Revamped React/JavaScript frontend interfaces, boosting user engagement by 25% and simplifying workflows."
-      ]
-    },
-    {
       title: "Software Engineer",
-      company: "Scale AI",
-      period: "Feb 2022 – Jan 2023",
-      // location: "Remote",
+      company: "Saleo",
+      period: "Aug 2023 – Feb 2024",
       achievements: [
-        "Developed a React/TypeScript interface for 10,000+ users to rate and compare large language model (LLM) responses, ensuring AI data quality and sanitization.",
-        "Evaluated AI responses using Python and JavaScript, reviewing 100+ weekly prompts to maintain performance and alignment with quality standards.",
-        "Collaborated on full-stack tools with React, TypeScript, and Python to visualize LLM metrics, improving decision-making for AI model iterations."
+        "Collaborated with cross-functional teams to deliver key product features, resulting in improved user engagement and overall product performance.",
+        "Developed and maintained web applications using modern JavaScript frameworks, contributing to a 40% increase in application responsiveness.",
+        "Participated in code reviews and implemented best practices, leading to a 30% reduction in bugs and improved code quality.",
+        "Worked closely with designers and product managers to translate requirements into technical solutions."
       ]
     }
-  ];
+  ], []);
 
   return (
     <>

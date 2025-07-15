@@ -1,30 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import HeroImg from "../images/hero-pfp.JPG";
 
 function AboutMe() {
-  // Proper cleanup for animations and memory management
-  useEffect(() => {
-    // Store any active timeouts or intervals for cleanup
-    const activeAnimations = [];
-    
-    return () => {
-      // Component cleanup - ensure any running animations are stopped
-      // Clear any active timeouts/intervals
-      activeAnimations.forEach(id => {
-        if (typeof id === 'number') {
-          clearTimeout(id);
-          clearInterval(id);
-        }
-      });
-      
-      // Force garbage collection hint for large images
-      if (window.gc) {
-        window.gc();
-      }
-    };
-  }, []);
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -59,22 +36,6 @@ function AboutMe() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <motion.div 
-              className="img-side"
-              variants={itemVariants}
-            >
-              <motion.img 
-                src={HeroImg} 
-                alt="Andrew Kim" 
-                className="img-side__main-img"
-                whileHover={{ 
-                  scale: 1.05,
-                  rotateY: 5
-                }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.div>
-            
             <motion.div 
               className="text-side"
               variants={itemVariants}

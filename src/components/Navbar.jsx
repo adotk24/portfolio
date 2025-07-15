@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import "../dist/styles.css";
 
 function Navbar() {
   const [hamburger, setHamburger] = useState(false);
@@ -15,23 +14,6 @@ function Navbar() {
   const pageUp = () => {
     window.scrollTo({ top: (0, 0), behavior: "smooth" });
   };
-
-  // Enhanced cleanup for memory leaks prevention
-  useEffect(() => {
-    return () => {
-      // Ensure body overflow is restored when component unmounts
-      document.body.style.overflow = 'unset';
-      
-      // More comprehensive event listener cleanup
-      document.removeEventListener('keydown', () => {});
-      document.removeEventListener('click', () => {});
-      document.removeEventListener('touchstart', () => {});
-      document.removeEventListener('touchend', () => {});
-      
-      // Clean up any stored references
-      setHamburger(false);
-    };
-  }, []);
 
   // Close menu when clicking outside or on escape key
   useEffect(() => {
@@ -50,7 +32,6 @@ function Navbar() {
     if (hamburger) {
       document.addEventListener('keydown', handleEscape);
       document.addEventListener('click', handleClickOutside);
-      // Prevent body scroll when menu is open
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';

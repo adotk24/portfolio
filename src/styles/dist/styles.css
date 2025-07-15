@@ -272,12 +272,14 @@ nav ul a:hover {
 
     .hero-main {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 10rem;
+    gap: 4rem;
     position: relative;
   z-index: 2;
   padding: 8rem 0;
+  height: 60vh;
+  min-height: 500px;
   }
 
 .hero-main.centered {
@@ -295,6 +297,25 @@ nav ul a:hover {
   justify-content: center;
 }
 
+.left-hero, .right-hero {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-hero {
+  gap: 2rem;
+  max-width: 60rem;
+}
+
+.right-hero {
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
   .content {
     display: flex;
   flex-direction: column;
@@ -303,14 +324,7 @@ nav ul a:hover {
   z-index: 2;
   }
 
-  .hero-text {
-    display: flex;
-    flex-direction: column;
-  gap: 2rem;
-  max-width: 60rem;
-  }
-
-  .hero-text h1 {
+  .left-hero h1 {
   font-size: 8rem;
   font-weight: 700;
   line-height: 1.1;
@@ -326,20 +340,20 @@ nav ul a:hover {
   50% { filter: hue-rotate(30deg); }
 }
 
-  .hero-text p {
+  .left-hero p {
   font-size: 2.8rem;
   color: var(--text-secondary);
     line-height: 1.6;
   margin-bottom: 2rem;
 }
 
-  .hero-text span {
+  .left-hero span {
     display: flex;
   gap: 2rem;
   align-items: center;
   }
 
-  .hero-text span a {
+  .left-hero span a {
   display: flex;
   align-items: center;
       justify-content: center;
@@ -357,7 +371,7 @@ nav ul a:hover {
   overflow: hidden;
 }
 
-.hero-text span a::before {
+.left-hero span a::before {
   content: '';
     position: absolute;
   top: 0;
@@ -369,25 +383,39 @@ nav ul a:hover {
   z-index: -1;
 }
 
-.hero-text span a:hover::before {
+.left-hero span a:hover::before {
   left: 0;
 }
 
-.hero-text span a:hover {
+.left-hero span a:hover {
   transform: translateY(-5px) scale(1.1);
   box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
 }
 
-    .hero-text img {
+    .left-hero img {
   width: 5.5rem;
   height: 5.5rem;
   animation: wave 2s ease-in-out infinite;
+  position: absolute;
+  top: 0.5rem;
+  right: -7rem;
 }
 
 @keyframes wave {
   0%, 100% { transform: rotate(0deg); }
   25% { transform: rotate(20deg); }
   75% { transform: rotate(-10deg); }
+}
+
+.hero-profile-img {
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  max-height: 400px;
+  border-radius: 1.7rem;
+  object-fit: cover;
+  box-shadow: 0px 0px 20px rgb(0 0 0 / 15%);
+  transition: all 0.3s ease;
 }
 
 /* Skills Section */
@@ -486,6 +514,8 @@ nav ul a:hover {
   gap: 8rem;
   position: relative;
   z-index: 2;
+  justify-content: center;
+  text-align: center;
 }
 
 .img-side {
@@ -523,6 +553,7 @@ nav ul a:hover {
 
     .text-side {
   flex: 1;
+  text-align: center;
 }
 
   .text-side h4 {
@@ -549,6 +580,7 @@ nav ul a:hover {
   font-size: 1.8rem;
   line-height: 1.8;
   color: var(--text-secondary);
+  text-align: center;
 }
 
 /* Experience Section */
@@ -935,6 +967,30 @@ footer h3 {
     flex-direction: column;
     text-align: center;
     gap: 4rem;
+    height: auto;
+    min-height: auto;
+  }
+  
+  .left-hero, .right-hero {
+    width: 100%;
+    height: auto;
+  }
+  
+  .hero-profile-img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+  
+  .left-hero h1 {
+    font-size: 5.5rem;
+  }
+  
+  .left-hero img {
+    right: -4rem;
+  }
+  
+  .left-hero span {
+    justify-content: center;
   }
   
   .about-content {
@@ -969,8 +1025,8 @@ footer h3 {
     padding: 1.5rem 2rem;
   }
   
-  .hero-text h1 {
-    font-size: 5.5rem;
+  .left-hero h1 {
+    font-size: 4.2rem;
   }
   
   .text-side h3 {

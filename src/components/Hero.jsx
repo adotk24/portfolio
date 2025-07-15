@@ -1,7 +1,6 @@
-// import "../dist/styles.css";
-import React, { useEffect, useRef } from "react";
-import { motion, useAnimation } from "framer-motion";
-import Waving from "../images/waving.webp";
+import React from "react";
+import { motion } from "framer-motion";
+import HeroImg from "../images/hero-pfp.webp";
 import Html from "../images/icons/html.svg";
 import Css from "../images/icons/css3.svg";
 import Js from "../images/icons/javascript.svg";
@@ -9,44 +8,9 @@ import ReactIcon from "../images/icons/react.svg";
 import Python from '../images/icons/python.webp'
 import Node from '../images/icons/node.svg'
 import Flask from '../images/icons/flask.webp'
-import Docker from '../images/icons/docker.webp'
+
 
 function Hero() {
-  const wavingAnimationControls = useAnimation();
-  const componentMounted = useRef(true);
-
-  useEffect(() => {
-    let timeoutId;
-    
-    // More efficient animation using recursive setTimeout with proper cleanup
-    const startWavingAnimation = () => {
-      if (!componentMounted.current) return;
-      
-      wavingAnimationControls.start({
-        rotate: [0, 20, -10, 0],
-        transition: { duration: 2, ease: "easeInOut" }
-      }).then(() => {
-        if (componentMounted.current) {
-          // Use setTimeout for delay with proper cleanup
-          timeoutId = setTimeout(startWavingAnimation, 1000);
-        }
-      }).catch(() => {
-        // Animation was cancelled, which is normal
-      });
-    };
-
-    startWavingAnimation();
-
-    // Enhanced cleanup function
-    return () => {
-      componentMounted.current = false;
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
-      wavingAnimationControls.stop();
-    };
-  }, [wavingAnimationControls]);
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -90,6 +54,18 @@ function Hero() {
     }
   };
 
+  // Optimize tech stack array to prevent unnecessary re-renders
+  const techStack = React.useMemo(() => [
+    { icon: Js, title: "JavaScript" },
+    { icon: null, title: "TypeScript", isIcon: true },
+    { icon: ReactIcon, title: "React" },
+    { icon: Node, title: "Node.js" },
+    { icon: Python, title: "Python" },
+    { icon: Html, title: "HTML5" },
+    { icon: Css, title: "CSS3" },
+    { icon: Flask, title: "Flask" }
+  ], []);
+
   return (
     <>
       <section id="home" className="hero">
@@ -100,9 +76,9 @@ function Hero() {
             initial="hidden"
             animate="visible"
           >
-            <div className="hero-main centered">
+            <div className="hero-main">
               <motion.div 
-                className="hero-text"
+                className="left-hero"
                 variants={itemVariants}
               >
                 <motion.h1
@@ -110,12 +86,7 @@ function Hero() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
                 >
-                  Hey there, I'm Andrew
-                  <motion.img 
-                    src={Waving} 
-                    alt="waving_hand"
-                    animate={wavingAnimationControls}
-                  />
+                  Hey I'm Andrew
                 </motion.h1>
 
                 <motion.p
@@ -123,7 +94,7 @@ function Hero() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
                 >
-                  Full-stack Software Engineer currently based in Dallas, Texas!
+                  Full-stack Software Engineer based in Dallas, Texas!
                 </motion.p>
 
                 <motion.span
@@ -162,6 +133,25 @@ function Hero() {
                   </motion.a>
                 </motion.span>
               </motion.div>
+
+              <motion.div 
+                className="right-hero"
+                variants={itemVariants}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <motion.img 
+                  src={HeroImg} 
+                  alt="Andrew Kim" 
+                  className="hero-profile-img"
+                  whileHover={{ 
+                    scale: 1.05,
+                    rotateY: 5
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.div>
             </div>
 
             <motion.div 
@@ -182,16 +172,7 @@ function Hero() {
                 animate="visible"
               >
                 <ul>
-                  {[
-                    { icon: Js, title: "JavaScript" },
-                    { icon: null, title: "TypeScript", isIcon: true },
-                    { icon: ReactIcon, title: "React" },
-                    { icon: Node, title: "Node.js" },
-                    { icon: Python, title: "Python" },
-                    { icon: Html, title: "HTML5" },
-                    { icon: Css, title: "CSS3" },
-                    { icon: Flask, title: "Flask" }
-                  ].map((tech, index) => (
+                  {techStack.map((tech, index) => (
                     <motion.li
                       key={index}
                       variants={skillVariants}
