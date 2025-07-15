@@ -18,14 +18,23 @@ function Experience() {
       ]
     },
     {
-      title: "Software Engineer",
+      title: "Software Engineer I",
       company: "Saleo",
-      period: "Aug 2023 – Feb 2024",
+      period: "Jan 2023 – Feb 2024",
       achievements: [
-        "Collaborated with cross-functional teams to deliver key product features, resulting in improved user engagement and overall product performance.",
-        "Developed and maintained web applications using modern JavaScript frameworks, contributing to a 40% increase in application responsiveness.",
-        "Participated in code reviews and implemented best practices, leading to a 30% reduction in bugs and improved code quality.",
-        "Worked closely with designers and product managers to translate requirements into technical solutions."
+        "Developed Python backend scripts to streamline data flow, improving integration scalability by 30%.",
+        "Designed TypeScript interfaces to securely connect client backends with our platform.",
+        "Revamped React/JavaScript frontend interfaces, boosting user engagement by 25% and simplifying workflows."
+      ]
+    },
+    {
+      title: "Software Engineer",
+      company: "Scale AI",
+      period: "Feb 2022 – Jan 2023",
+      achievements: [
+        "Developed a React/TypeScript interface for 10,000+ users to rate and compare large language model (LLM) responses, ensuring AI data quality and sanitization.",
+        "Evaluated AI responses using Python and JavaScript, reviewing 100+ weekly prompts to maintain performance and alignment with quality standards.",
+        "Collaborated on full-stack tools with React, TypeScript, and Python to visualize LLM metrics, improving decision-making for AI model iterations."
       ]
     }
   ], []);
