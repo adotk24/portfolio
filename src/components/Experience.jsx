@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function Experience() {
   const [activeTab, setActiveTab] = useState(0);
+
+  // Cleanup any ongoing animations on component unmount
+  useEffect(() => {
+    return () => {
+      // Clear any active tab state to help with cleanup
+      setActiveTab(0);
+    };
+  }, []);
 
   const experiences = [
     {

@@ -1,17 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal } from '../context/Modal'
 import './ProjectModal.css';
 
 function ProjectModal({ icon, altText, title, snippet, tech, description, challenges, goals, githubURL, liveLink, images }) {
     const [showModal, setShowModal] = useState(false);
+
+    // Cleanup body overflow on component unmount to prevent memory leaks
+    useEffect(() => {
+        return () => {
+            // Restore body overflow when component unmounts
+            document.body.style.overflow = 'unset';
+        };
+    }, []);
+
+    // Manage body overflow when modal state changes
+    useEffect(() => {
+        if (showModal) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+
+        // Cleanup function to restore overflow when effect runs again or component unmounts
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [showModal]);
+
     const viewProject = () => {
         setShowModal(true);
-        document.body.style.overflow = 'hidden';
     }
 
     const exitProject = () => {
         setShowModal(false);
-        document.body.style.overflow = 'scroll';
     }
     return (
         <div className='project-modal'>

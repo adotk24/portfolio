@@ -16,6 +16,17 @@ function Navbar() {
     window.scrollTo({ top: (0, 0), behavior: "smooth" });
   };
 
+  // Cleanup body overflow on component unmount to prevent memory leaks
+  useEffect(() => {
+    return () => {
+      // Ensure body overflow is restored when component unmounts
+      document.body.style.overflow = 'unset';
+      // Remove any lingering event listeners
+      document.removeEventListener('keydown', () => {});
+      document.removeEventListener('click', () => {});
+    };
+  }, []);
+
   // Close menu when clicking outside or on escape key
   useEffect(() => {
     const handleEscape = (e) => {

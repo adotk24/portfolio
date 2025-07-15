@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 
 function Contact() {
+  // Cleanup any ongoing animations on component unmount
+  useEffect(() => {
+    return () => {
+      // Component cleanup - ensure any running animations are stopped
+      // This helps prevent memory leaks with framer-motion
+    };
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

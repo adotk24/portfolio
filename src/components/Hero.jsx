@@ -1,6 +1,6 @@
 // import "../dist/styles.css";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
 import Waving from "../images/waving.png";
 import Html from "../images/icons/html.svg";
 import Css from "../images/icons/css3.svg";
@@ -12,6 +12,36 @@ import Flask from '../images/icons/flask.png'
 import Docker from '../images/icons/docker.png'
 
 function Hero() {
+  const wavingAnimationControls = useAnimation();
+  const componentMounted = useRef(true);
+
+  useEffect(() => {
+    // Start the waving animation
+    const startWavingAnimation = async () => {
+      while (componentMounted.current) {
+        try {
+          await wavingAnimationControls.start({
+            rotate: [0, 20, -10, 0],
+            transition: { duration: 2, ease: "easeInOut" }
+          });
+          // Add a small delay between animations to prevent excessive CPU usage
+          await new Promise(resolve => setTimeout(resolve, 1000));
+        } catch (error) {
+          // Animation was cancelled, which is normal when component unmounts
+          break;
+        }
+      }
+    };
+
+    startWavingAnimation();
+
+    // Cleanup function
+    return () => {
+      componentMounted.current = false;
+      wavingAnimationControls.stop();
+    };
+  }, [wavingAnimationControls]);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -79,8 +109,7 @@ function Hero() {
                   <motion.img 
                     src={Waving} 
                     alt="waving_hand"
-                    animate={{ rotate: [0, 20, -10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    animate={wavingAnimationControls}
                   />
                 </motion.h1>
 

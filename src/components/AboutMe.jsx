@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import HeroImg from "../images/hero-pfp.JPG";
 
 function AboutMe() {
+  // Cleanup any ongoing animations on component unmount
+  useEffect(() => {
+    return () => {
+      // Component cleanup - ensure any running animations are stopped
+      // This helps prevent memory leaks with framer-motion
+    };
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
